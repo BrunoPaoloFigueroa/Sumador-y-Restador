@@ -22,22 +22,21 @@ main (void){
     PORTD=(d<<4)|u;
     _delay_ms(100);
 
-    if(p==0x01){
 
+    switch (p)
+    {
+    case 0x01:
       if(ram<99){
         ram++;
         _delay_ms(500);
       }
+      break;
 
-    }
-
-    if(p==0x02){
-
-      
-        ram--;
+      case 0x02:
+      ram--;
         _delay_ms(500);
-     
-
+      break;
+    
     }
 
 
