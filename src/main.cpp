@@ -5,7 +5,7 @@
 main (void){
 
 
-  DDRD|=0xFF;
+  DDRD=0xFF;
   DDRB&=~(0X1F);
   char a=0x00;
   char memoria1=0x00;
@@ -16,29 +16,29 @@ main (void){
   
   while(1){
 
-    char p=PIND&0X1F;
+    char p=PINB&0X1F;
     char u=ram%0x0A;
     char d=ram/0x0A;
-    PORTB=(d<<4)|u;
-
+    PORTD=(d<<4)|u;
+    _delay_ms(100);
 
     if(p==0x01){
 
-      if(){
-
-
-
-
+      if(ram<99){
+        ram++;
+        _delay_ms(500);
       }
-
-
-
-
-
 
     }
 
+    if(p==0x02){
 
+      
+        ram--;
+        _delay_ms(500);
+     
+
+    }
 
 
 
