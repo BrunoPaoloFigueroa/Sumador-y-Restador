@@ -26,8 +26,11 @@ main (void){
     switch (p)
     {
     case 0x01:
-      if(ram<99){
-        ram++;
+     ram++;
+     _delay_ms(500);
+
+      if(ram>99){
+        ram=0x00;
         _delay_ms(500);
       }
       break;
@@ -35,6 +38,13 @@ main (void){
       case 0x02:
       ram--;
         _delay_ms(500);
+
+        if(ram<0){
+          ram=99;
+          _delay_ms(500);
+        }
+
+
       break;
     
     }
